@@ -5,3 +5,4 @@ nT60 = round(log(1000)/(1-max(abs(roots(A))))); % T60 est.
 v = randn(1,Nx+nT60); % Gaussian white noise: N(0,1)
 x = filter(B,A,v);    % Apply 1/F roll-off to PSD
 x = x(nT60+1:end);    % Skip transient response
+audiowrite('ruidorosa.wav',X,44100)
